@@ -3,574 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Akshat Shah is a B.Tech CSE student focused on AI, ML, and deep learning. Explore projects, skills, and internship opportunities.">
-  <title>Akshat | AI, ML & Deep Learning</title>
+  <meta name="description" content="Akshat Shah is a Computer Science student graduating in 2028, seeking AI/ML internship opportunities. Explore his skills, projects, and contact details.">
+  <meta property="og:title" content="Akshat Shah | AI/ML Internship Candidate">
+  <meta property="og:description" content="Computer Science student focused on Python, SQL, machine learning, and deep learning. Explore projects and get in touch.">
+  <meta property="og:type" content="website">
+  <title>Akshat Shah | AI/ML Internship Candidate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f4f2ee;
-      --panel: #ffffff;
-      --ink: #101116;
-      --muted: #5f6272;
-      --line: #dedbd3;
-      --a: #ff5a36;
-      --b: #7a5cff;
-      --g: rgba(122, 92, 255, 0.16);
-      --good: #2ecb71;
-      --shadow: rgba(16, 17, 22, 0.08);
-      color-scheme: light;
-      --max: 1100px;
+      --bg: #f4f2ee; --panel: #fff; --ink: #101116; --muted: #5f6272;
+      --line: #dedbd3; --a: #ff5a36; --b: #7a5cff; --glow: rgba(122,92,255,.16);
+      --shadow: rgba(16,17,22,.08); color-scheme: light; --max: 1100px;
     }
-
     :root[data-theme="dark"] {
-      --bg: #08090d;
-      --panel: #12131a;
-      --ink: #f2f2f7;
-      --muted: #9b9eb2;
-      --line: #23252f;
-      --g: rgba(122, 92, 255, 0.25);
-      --shadow: rgba(0, 0, 0, 0.32);
-      color-scheme: dark;
+      --bg: #08090d; --panel: #12131a; --ink: #f2f2f7; --muted: #9b9eb2;
+      --line: #23252f; --glow: rgba(122,92,255,.25); --shadow: rgba(0,0,0,.32); color-scheme: dark;
     }
-
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      margin: 0;
-      font: 400 17px/1.7 "Inter", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      overflow-x: hidden;
-    }
-
-    img { max-width: 100%; display: block; }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; overflow-x: hidden; background: var(--bg); color: var(--ink); font: 400 17px/1.7 Inter,system-ui,sans-serif; }
     a { color: inherit; }
-
-    .mono {
-      font-family: "JetBrains Mono", ui-monospace, monospace;
-    }
-
-    h1, h2, h3, .logo {
-      font-family: "Syne", "Inter", sans-serif;
-      letter-spacing: -0.04em;
-      margin: 0;
-    }
-
+    h1,h2,h3,.logo { margin: 0; font-family: Syne,Inter,sans-serif; letter-spacing: -.04em; }
     p { margin: 0; }
-
-    .wrap {
-      width: min(var(--max), calc(100% - 32px));
-      margin-inline: auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(12px);
-      background: color-mix(in srgb, var(--bg) 76%, transparent);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 68px;
-      gap: 18px;
-    }
-
-    .logo {
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 800;
-      font-size: clamp(1.2rem, 2vw, 1.5rem);
-    }
-
-    .logo b {
-      color: var(--a);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      position: relative;
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.92rem;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--a), var(--b));
-      transition: width 0.25s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--ink);
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a:focus-visible::after {
-      width: 100%;
-    }
-
-    .theme-toggle {
-      width: 38px;
-      height: 38px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: transparent;
-      color: var(--ink);
-      cursor: pointer;
-      font-size: 1rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .theme-toggle:hover,
-    .theme-toggle:focus-visible {
-      transform: translateY(-1px);
-      border-color: var(--b);
-      outline: none;
-    }
-
-    .hero {
-      padding: clamp(4rem, 8vw, 7rem) 0 3rem;
-    }
-
-    .hero-inner {
-      display: grid;
-      gap: 20px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      width: fit-content;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--panel);
-      color: var(--muted);
-      font-size: 0.78rem;
-      box-shadow: 0 8px 24px var(--shadow);
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: var(--good);
-      border-radius: 50%;
-      box-shadow: 0 0 0 0 rgba(46, 203, 113, 0.48);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(46, 203, 113, 0.45); }
-      70% { box-shadow: 0 0 0 10px rgba(46, 203, 113, 0.02); }
-      100% { box-shadow: 0 0 0 0 rgba(46, 203, 113, 0); }
-    }
-
-    h1 {
-      font-size: clamp(3.5rem, 11vw, 8.7rem);
-      line-height: 0.93;
-      margin: 0;
-      max-width: 760px;
-    }
-
-    h1 .gradient {
-      display: inline-block;
-      background: linear-gradient(100deg, var(--a), var(--b));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .subtitle {
-      font-size: clamp(1.1rem, 2.2vw, 1.7rem);
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
-
-    .subtitle .typed {
-      color: var(--ink);
-      font-style: normal;
-    }
-
-    .cursor {
-      color: var(--a);
-      display: inline-block;
-      animation: blink 1s steps(1, end) infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    .lead {
-      max-width: 560px;
-      font-size: 1.06rem;
-      color: var(--muted);
-      margin-top: 0.5rem;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 1.5rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      padding: 0.9rem 1.5rem;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid var(--line);
-      color: var(--ink);
-      background: transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .btn.primary {
-      background: linear-gradient(100deg, var(--a), var(--b));
-      border-color: transparent;
-      color: white;
-      box-shadow: 0 16px 30px var(--g);
-    }
-
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px var(--g);
-      outline: none;
-      border-color: var(--b);
-    }
-
-    .marquee {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: var(--panel);
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 16px 0;
-    }
-
-    .marquee-track {
-      display: inline-flex;
-      align-items: center;
-      gap: 28px;
-      min-width: max-content;
-      animation: marquee 26s linear infinite;
-      font-family: "Syne", "Inter", sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.1rem, 2vw, 1.65rem);
-      letter-spacing: -0.03em;
-      padding-left: 30px;
-    }
-
-    .marquee-track span:nth-child(even) {
-      color: var(--a);
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    section {
-      padding: clamp(4rem, 8vw, 6rem) 0;
-    }
-
-    .eyebrow {
-      color: var(--a);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 0.7rem;
-    }
-
-    .section-title {
-      font-size: clamp(2.2rem, 5vw, 3.7rem);
-      line-height: 1.05;
-      margin-bottom: 1.5rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 1.6rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 12px 32px var(--shadow);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .card:hover,
-    .card:focus-within {
-      transform: translateY(-4px);
-      border-color: rgba(122, 92, 255, 0.7);
-      box-shadow: 0 20px 50px var(--g);
-    }
-
-    .card.num1 { grid-column: span 4; }
-    .card.num2 { grid-column: span 2; }
-    .card.num3 { grid-column: span 3; }
-    .card.num4 { grid-column: span 3; }
-    .card.num5 { grid-column: span 6; }
-    .card.num6 { grid-column: span 3; }
-    .card.num7 { grid-column: span 3; }
-
-    .num-tag {
-      position: absolute;
-      top: 14px;
-      right: 18px;
-      font-size: 3.2rem;
-      line-height: 1;
-      font-family: "Syne", sans-serif;
-      font-weight: 800;
-      color: rgba(122, 92, 255, 0.15);
-      pointer-events: none;
-    }
-
-    .card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card .icon {
-      font-size: 2rem;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-
-    .card h3 {
-      font-size: clamp(1.35rem, 2vw, 1.8rem);
-      margin: 0 0 0.7rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 1rem;
-    }
-
-    .chip {
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--muted);
-      font-size: 0.73rem;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 30px;
-      border-left: 2px solid var(--line);
-      display: grid;
-      gap: 28px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -38px;
-      top: 7px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 3px solid var(--a);
-    }
-
-    .timeline-item small {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .timeline-item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-item p {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .cta {
-      text-align: center;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 0%, var(--g), transparent 60%);
-    }
-
-    .cta > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta .section-title {
-      margin-bottom: 0.8rem;
-    }
-
-    .cta p {
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .socials {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 18px;
-    }
-
-    .socials a {
-      text-decoration: none;
-      color: var(--muted);
-      transition: color 0.2s ease;
-    }
-
-    .socials a:hover,
-    .socials a:focus-visible {
-      color: var(--a);
-      outline: none;
-    }
-
-    footer {
-      padding: 1.3rem 0 2.3rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    .reveal.in {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (max-width: 820px) {
-      .nav {
-        flex-wrap: wrap;
-        padding: 0.8rem 0;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .card.num1,
-      .card.num2,
-      .card.num3,
-      .card.num4,
-      .card.num5,
-      .card.num6,
-      .card.num7 {
-        grid-column: span 6;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .nav-links {
-        justify-content: center;
-      }
-
-      .nav-links li {
-        width: auto;
-      }
-
-      .btn-row {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
+    .mono { font-family: "JetBrains Mono",ui-monospace,monospace; }
+    .wrap { width: min(var(--max),calc(100% - 32px)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); background: color-mix(in srgb,var(--bg) 76%,transparent); }
+    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .logo { font-size: 1.4rem; font-weight: 800; text-decoration: none; }.logo b { color: var(--a); }
+    .nav-links { display: flex; gap: 22px; align-items: center; list-style: none; margin: 0; padding: 0; }
+    .nav-links a,.socials a { color: var(--muted); text-decoration: none; }
+    .nav-links a:hover,.nav-links a:focus-visible,.socials a:hover,.socials a:focus-visible { color: var(--a); }
+    .theme-toggle { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; }
+    .hero { padding: clamp(4rem,8vw,7rem) 0 3.5rem; }
+    .hero-inner { display: grid; gap: 19px; }
+    .badge { display: inline-flex; gap: 10px; align-items: center; width: fit-content; padding: 7px 13px; border: 1px solid var(--line); border-radius: 99px; background: var(--panel); color: var(--muted); font-size: .78rem; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #2ecc71; }
+    h1 { max-width: 850px; font-size: clamp(3.3rem,10vw,8rem); line-height: .96; }
+    h1 .gradient { color: transparent; background: linear-gradient(100deg,var(--a),var(--b)); background-clip: text; -webkit-background-clip: text; }
+    .role { color: var(--a); font-size: clamp(.85rem,1.7vw,1rem); letter-spacing: .04em; text-transform: uppercase; }
+    .lead { max-width: 700px; color: var(--muted); font-size: clamp(1.05rem,2vw,1.2rem); }
+    .facts { display: flex; flex-wrap: wrap; gap: 10px 24px; color: var(--muted); font-size: .9rem; }
+    .facts strong { color: var(--ink); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: .8rem 1.4rem; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; font-weight: 600; transition: transform .2s,box-shadow .2s,border-color .2s; }
+    .btn.primary { color: #fff; border-color: transparent; background: linear-gradient(100deg,var(--a),var(--b)); box-shadow: 0 12px 28px var(--glow); }
+    .btn:hover,.btn:focus-visible { transform: translateY(-2px); border-color: var(--b); box-shadow: 0 12px 30px var(--glow); }
+    section { padding: clamp(4rem,8vw,6rem) 0; }
+    .eyebrow { margin-bottom: .7rem; color: var(--a); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+    .section-title { margin-bottom: 1.5rem; font-size: clamp(2.2rem,5vw,3.7rem); line-height: 1.05; }
+    .section-intro { max-width: 680px; margin: -.6rem 0 1.6rem; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 18px; }
+    .card { position: relative; grid-column: span 3; overflow: hidden; padding: 1.6rem; border: 1px solid var(--line); border-radius: 22px; background: var(--panel); box-shadow: 0 12px 32px var(--shadow); transition: transform .25s,border-color .25s,box-shadow .25s; }
+    .card.wide { grid-column: 1/-1; }
+    .card:hover,.card:focus-within { transform: translateY(-4px); border-color: var(--b); box-shadow: 0 20px 50px var(--glow); }
+    .card h3 { margin: 0 0 .65rem; font-size: clamp(1.3rem,2vw,1.7rem); }
+    .card p { color: var(--muted); font-size: .97rem; }
+    .card-label { display: block; margin-bottom: .75rem; color: var(--a); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+    .chip { padding: .3rem .68rem; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font-size: .75rem; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 1.1rem; }
+    .project-links a { color: var(--a); font-size: .9rem; font-weight: 600; text-underline-offset: 3px; }
+    .timeline { display: grid; gap: 22px; padding-left: 26px; border-left: 2px solid var(--line); }
+    .timeline-item { position: relative; padding-left: 12px; }
+    .timeline-item::before { content: ""; position: absolute; top: 8px; left: -34px; width: 12px; height: 12px; border: 3px solid var(--a); border-radius: 50%; background: var(--bg); }
+    .timeline-item small { color: var(--muted); }
+    .timeline-item h3 { margin: .35rem 0; font-size: 1.25rem; }
+    .timeline-item p { color: var(--muted); }
+    .cta { padding: clamp(2.5rem,6vw,4.5rem) 1.5rem; border: 1px solid var(--line); border-radius: 28px; background: var(--panel); text-align: center; }
+    .cta p { max-width: 520px; margin: 0 auto 1.3rem; color: var(--muted); }
+    .socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-top: 1.4rem; }
+    footer { padding: 1.3rem 0 2.3rem; color: var(--muted); text-align: center; font-size: .8rem; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease,transform .65s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media(max-width:760px) {
+      .nav { flex-wrap: wrap; padding: .7rem 0; }
+      .nav nav { order: 3; width: 100%; overflow-x: auto; }
+      .nav-links { justify-content: space-between; gap: 14px; min-width: max-content; }
+      .card,.card.wide { grid-column: 1/-1; }
+    }
+    @media(max-width:480px) { .btn-row { flex-direction: column; align-items: stretch; } }
+    @media(prefers-reduced-motion:reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
+      *,*::before,*::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -580,90 +97,52 @@
       <a class="logo" href="#top" aria-label="Akshat home">akshat<b>.</b></a>
       <nav aria-label="Main navigation">
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
+          <li><a href="#profile">Profile</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#journey">Journey</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">☀️</button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">☀️</button>
     </div>
   </header>
 
   <main id="top">
     <header class="hero">
       <div class="wrap hero-inner">
-        <span class="badge mono"><i class="dot" aria-hidden="true"></i> Available for internships &amp; collaborations</span>
-
-        <div>
-          <h1><span>Hi, I’m</span><br><span class="gradient">Akshat.</span></h1>
+        <span class="badge mono"><i class="dot" aria-hidden="true"></i> Seeking AI / ML internship opportunities</span>
+        <p class="role mono">Computer Science &amp; Engineering · Class of 2028</p>
+        <h1>Akshat <span class="gradient">Shah.</span></h1>
+        <p class="lead">Computer Science student building a foundation in Python, SQL, machine learning, and deep learning. Interested in applying data and software skills to practical problems, learning from experienced teams, and contributing to AI/ML projects.</p>
+        <div class="facts" aria-label="Candidate details">
+          <span><strong>Degree:</strong> B.Tech, Computer Science &amp; Engineering</span>
+          <span><strong>Expected graduation:</strong> 2028</span>
+          <span><strong>Focus:</strong> AI / ML / Deep Learning</span>
         </div>
-
-        <p class="subtitle mono">I build <em class="typed" id="typedText">AI that solves real problems.</em><span class="cursor" aria-hidden="true">|</span></p>
-
-        <p class="lead">B.Tech CSE student (graduating 2028) exploring AI, machine learning, and deep learning. I enjoy building models, turning data into real products, and learning in public while creating software that has purpose.</p>
-
         <div class="btn-row">
-          <a class="btn primary" href="#projects">See my work</a>
-          <a class="btn" href="#contact">Let’s talk</a>
+          <a class="btn primary" href="#projects">Explore projects</a>
+          <a class="btn" href="mailto:akshatshah1408@gmail.com">Contact me</a>
+          <a class="btn" href="https://github.com/Akushah26" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
         </div>
       </div>
     </header>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Artificial Intelligence</span><span>✦</span>
-        <span>Machine Learning</span><span>✦</span>
-        <span>Deep Learning</span><span>✦</span>
-        <span>Neural Networks</span><span>✦</span>
-        <span>Computer Vision</span><span>✦</span>
-        <span>NLP</span><span>✦</span>
-        <span>Data Science</span><span>✦</span>
-        <span>Model Training</span><span>✦</span>
-        <span>Artificial Intelligence</span><span>✦</span>
-        <span>Machine Learning</span><span>✦</span>
-        <span>Deep Learning</span><span>✦</span>
-        <span>Neural Networks</span><span>✦</span>
-        <span>Computer Vision</span><span>✦</span>
-        <span>NLP</span><span>✦</span>
-        <span>Data Science</span><span>✦</span>
-        <span>Model Training</span><span>✦</span>
-      </div>
-    </div>
-
-    <section id="about">
+    <section id="profile">
       <div class="wrap">
-        <p class="eyebrow mono reveal">01 — About</p>
-        <h2 class="section-title reveal">Curious mind,<br>data mindset.</h2>
-
+        <p class="eyebrow mono reveal">01 — Candidate profile</p>
+        <h2 class="section-title reveal">Curious, analytical, ready to contribute.</h2>
+        <p class="section-intro reveal">I’m developing practical skills in data analysis and model building, with a focus on understanding the problem, testing ideas, and communicating results clearly. I’m looking for an internship where I can learn through hands-on work and support a team building useful software.</p>
         <div class="grid">
-          <article class="card num1 reveal">
-            <span class="num-tag">01</span>
-            <span class="icon" aria-hidden="true">🤖</span>
-            <h3>Artificial Intelligence &amp; Machine Learning</h3>
-            <p>I enjoy understanding how models learn patterns from data and using that knowledge to build useful tools and intelligent systems.</p>
+          <article class="card reveal">
+            <span class="card-label mono">How I approach work</span>
+            <h3>Experiment and evaluate</h3>
+            <p>I value clear problem statements, thoughtful experiments, suitable evaluation metrics, and documentation that makes results easier to understand and reproduce.</p>
           </article>
-
-          <article class="card num2 reveal">
-            <span class="num-tag">02</span>
-            <span class="icon" aria-hidden="true">🤝</span>
-            <h3>Community</h3>
-            <p>I learn in public, share ideas, and enjoy helping other students grow through collaboration and feedback.</p>
-          </article>
-
-          <article class="card num3 reveal">
-            <span class="num-tag">03</span>
-            <span class="icon" aria-hidden="true">🧬</span>
-            <h3>Deep Learning</h3>
-            <p>Neural networks continue to fascinate me, especially how they perceive inputs, extract features, and learn meaningful representations.</p>
-          </article>
-
-          <article class="card num4 reveal">
-            <span class="num-tag">04</span>
-            <span class="icon" aria-hidden="true">📊</span>
-            <h3>Measure, don’t guess</h3>
-            <p>I like evaluation, experimentation, and documentation so that every result is grounded in evidence instead of assumptions.</p>
+          <article class="card reveal">
+            <span class="card-label mono">How I work with others</span>
+            <h3>Learn and collaborate</h3>
+            <p>I enjoy learning in public, sharing progress, incorporating feedback, and working with peers to turn ideas into well-considered solutions.</p>
           </article>
         </div>
       </div>
@@ -672,50 +151,26 @@
     <section id="skills">
       <div class="wrap">
         <p class="eyebrow mono reveal">02 — Skills</p>
-        <h2 class="section-title reveal">Python &amp; SQL.</h2>
-
+        <h2 class="section-title reveal">Tools and foundations.</h2>
+        <p class="section-intro reveal">A growing toolkit for programming, working with data, and exploring machine learning. Skill levels are best demonstrated through project work and discussion.</p>
         <div class="grid">
-          <article class="card num6 reveal">
-            <span class="num-tag">Py</span>
-            <span class="icon" aria-hidden="true">🐍</span>
+          <article class="card reveal">
+            <span class="card-label mono">Programming</span>
             <h3>Python</h3>
-            <p>The language I use to automate tasks, build models, and prototype intelligent systems.</p>
-            <div class="chips">
-              <span class="chip">Syntax</span>
-              <span class="chip">Automation</span>
-              <span class="chip">Data Processing</span>
-              <span class="chip">Prototyping</span>
-            </div>
+            <p>Used for programming practice, data processing, automation, and prototyping.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Automation</span><span class="chip">Data processing</span></div>
           </article>
-
-          <article class="card num6 reveal">
-            <span class="num-tag">SQL</span>
-            <span class="icon" aria-hidden="true">🗄️</span>
+          <article class="card reveal">
+            <span class="card-label mono">Databases</span>
             <h3>SQL</h3>
-            <p>Designing queries, structuring data, and extracting useful answers from databases.</p>
-            <div class="chips">
-              <span class="chip">DDL</span>
-              <span class="chip">Joins</span>
-              <span class="chip">Aggregation</span>
-              <span class="chip">Performance</span>
-            </div>
+            <p>Working with database structure and queries to retrieve and organize information.</p>
+            <div class="chips"><span class="chip">DDL</span><span class="chip">Joins</span><span class="chip">Aggregation</span></div>
           </article>
-
-          <article class="card num5 reveal">
-            <span class="num-tag">AI</span>
-            <span class="icon" aria-hidden="true">🧠</span>
-            <h3>AI / ML Tools</h3>
-            <p>Libraries and workflows I use for data analysis, model building, training, evaluation, and visualisation.</p>
-            <div class="chips">
-              <span class="chip">NumPy</span>
-              <span class="chip">Pandas</span>
-              <span class="chip">Scikit-learn</span>
-              <span class="chip">TensorFlow</span>
-              <span class="chip">PyTorch</span>
-              <span class="chip">Matplotlib</span>
-              <span class="chip">Seaborn</span>
-              <span class="chip">Jupyter</span>
-            </div>
+          <article class="card wide reveal">
+            <span class="card-label mono">Data and machine learning</span>
+            <h3>Libraries &amp; workflows</h3>
+            <p>Tools for analysis, model development, evaluation, and visualization.</p>
+            <div class="chips"><span class="chip">NumPy</span><span class="chip">Pandas</span><span class="chip">Scikit-learn</span><span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Jupyter</span></div>
           </article>
         </div>
       </div>
@@ -724,65 +179,45 @@
     <section id="projects">
       <div class="wrap">
         <p class="eyebrow mono reveal">03 — Projects</p>
-        <h2 class="section-title reveal">Selected work.</h2>
-
+        <h2 class="section-title reveal">Selected technical work.</h2>
+        <p class="section-intro reveal">Project summaries highlight the engineering themes I’ve explored. I’m happy to discuss my role, implementation details, and lessons learned; public source links can be added here when available.</p>
         <div class="grid">
-          <article class="card num6 reveal">
-            <span class="num-tag">A</span>
-            <span class="icon" aria-hidden="true">🎫</span>
-            <h3>Multi-tenant SaaS Platform</h3>
-            <p>Built an event-driven ticketing and incident management system with tenant isolation, secure access, and modular services.</p>
-            <div class="chips">
-              <span class="chip">Microservices</span>
-              <span class="chip">Event-driven</span>
-              <span class="chip">Security</span>
-            </div>
+          <article class="card reveal">
+            <span class="card-label mono">Project · SaaS / distributed systems</span>
+            <h3>Multi-tenant ticketing platform</h3>
+            <p>Event-driven ticket and incident management platform focused on separating tenant data and organizing functionality into modular services.</p>
+            <div class="chips"><span class="chip">Multi-tenancy</span><span class="chip">Event-driven design</span><span class="chip">Service architecture</span></div>
           </article>
-
-          <article class="card num6 reveal">
-            <span class="num-tag">B</span>
-            <span class="icon" aria-hidden="true">🛒</span>
-            <h3>Enterprise E-Commerce</h3>
-            <p>Designed an e-commerce platform with async communication, caching, authentication, and real-time platform readiness concerns in mind.</p>
-            <div class="chips">
-              <span class="chip">Architecture</span>
-              <span class="chip">Caching</span>
-              <span class="chip">Auth</span>
-            </div>
+          <article class="card reveal">
+            <span class="card-label mono">Project · E-commerce / services</span>
+            <h3>Enterprise e-commerce</h3>
+            <p>E-commerce platform exploration centered on service boundaries, asynchronous messaging, caching, and secure authentication.</p>
+            <div class="chips"><span class="chip">Microservices</span><span class="chip">Messaging</span><span class="chip">Caching</span><span class="chip">Authentication</span></div>
           </article>
-
-          <article class="card num5 reveal">
-            <span class="num-tag">C</span>
-            <span class="icon" aria-hidden="true">🧠</span>
-            <h3>AI / ML / DL: my main focus</h3>
-            <p>This is where I want to build my career: learning how models are trained, how performance is measured, and how to turn research ideas into useful systems.</p>
-            <div class="chips">
-              <span class="chip">Model training</span>
-              <span class="chip">Evaluation</span>
-              <span class="chip">Optimization</span>
-              <span class="chip">Research</span>
-            </div>
+          <article class="card wide reveal">
+            <span class="card-label mono">Current learning focus · AI / ML</span>
+            <h3>Building toward applied machine learning</h3>
+            <p>Developing foundations in model training and evaluation, with an emphasis on understanding data, selecting useful metrics, and communicating limitations. This is a learning focus—not a claimed completed project.</p>
+            <div class="chips"><span class="chip">Data preparation</span><span class="chip">Model evaluation</span><span class="chip">Experimentation</span><span class="chip">Deep learning foundations</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="journey">
+    <section id="education">
       <div class="wrap">
-        <p class="eyebrow mono reveal">04 — Journey</p>
-        <h2 class="section-title reveal">Learn. Build. Repeat.</h2>
-
+        <p class="eyebrow mono reveal">04 — Education</p>
+        <h2 class="section-title reveal">Education &amp; direction.</h2>
         <div class="timeline reveal">
           <div class="timeline-item">
-            <small class="mono">2025 – 2028</small>
+            <small class="mono">2025 – 2028 · Expected</small>
             <h3>B.Tech, Computer Science &amp; Engineering</h3>
             <p>Krishna School of Emerging Technology and Applied Research, KPGU, Vadodara.</p>
           </div>
-
           <div class="timeline-item">
-            <small class="mono">Focus areas</small>
-            <h3>AI, ML, Deep Learning &amp; product thinking</h3>
-            <p>I’m building a foundation in machine learning systems, experimentation, and problem solving—while developing the skills to turn ideas into impactful software.</p>
+            <small class="mono">Internship interests</small>
+            <h3>AI / ML, data, and software engineering</h3>
+            <p>Interested in opportunities that combine programming, data, experimentation, and building practical software with a supportive engineering team.</p>
           </div>
         </div>
       </div>
@@ -792,89 +227,54 @@
       <div class="wrap">
         <div class="cta reveal">
           <p class="eyebrow mono">05 — Contact</p>
-          <h2 class="section-title" style="margin-bottom:0;">Let’s build something great.</h2>
-          <p>Have an idea or an opportunity? My inbox is open.</p>
-          <a class="btn primary" href="mailto:akshatshah1408@gmail.com">Say hello</a>
-
+          <h2 class="section-title">Let’s talk about an internship.</h2>
+          <p>I’m open to AI/ML and related software internship opportunities. Email is the best way to reach me.</p>
+          <a class="btn primary" href="mailto:akshatshah1408@gmail.com?subject=Internship%20opportunity">Email Akshat</a>
           <div class="socials">
-            <a href="https://github.com/Akushah26" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/akshat-shah-4b055b420" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://x.com/akshatshah1408" target="_blank" rel="noreferrer">X</a>
+            <a href="https://github.com/Akushah26" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/akshat-shah-4b055b420" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://x.com/akshatshah1408" target="_blank" rel="noopener noreferrer">X</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>© 2026 Akshat. Designed with care. All rights reserved.</footer>
+  <footer>© 2026 Akshat Shah. All rights reserved.</footer>
 
   <script>
     const root = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
 
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    root.setAttribute('data-theme', theme);
-    themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
-
-    themeToggle.addEventListener('click', () => {
-      const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', nextTheme);
-      localStorage.setItem('theme', nextTheme);
-      themeToggle.textContent = nextTheme === 'dark' ? '🌙' : '☀️';
-    });
-
-    const phrases = [
-      'AI that solves real problems.',
-      'machine learning models.',
-      'deep neural networks.',
-      'intelligent systems.'
-    ];
-
-    const typedText = document.getElementById('typedText');
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function typeLoop() {
-      const current = phrases[phraseIndex];
-      if (!deleting) {
-        charIndex++;
-        typedText.textContent = current.slice(0, charIndex);
-        if (charIndex === current.length) {
-          deleting = true;
-          setTimeout(typeLoop, 1200);
-          return;
-        }
-      } else {
-        charIndex--;
-        typedText.textContent = current.slice(0, charIndex);
-        if (charIndex === 0) {
-          deleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-      }
-      setTimeout(typeLoop, deleting ? 35 : 80);
-    }
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      typedText.textContent = 'AI that solves real problems.';
-    } else {
-      typeLoop();
-    }
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      const theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      root.setAttribute('data-theme', theme);
+      themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+      themeToggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+      themeToggle.addEventListener('click', () => {
+        const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', nextTheme);
+        themeToggle.textContent = nextTheme === 'dark' ? '🌙' : '☀️';
+        themeToggle.setAttribute('aria-label', `Switch to ${nextTheme === 'dark' ? 'light' : 'dark'} theme`);
+        try { localStorage.setItem('theme', nextTheme); } catch (_) { /* Theme still works for this visit. */ }
+      });
+    } catch (_) { /* Keep the default light theme if browser storage is unavailable. */ }
 
     const revealItems = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealItems.forEach((item) => observer.observe(item));
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('in'));
+    }
   </script>
 </body>
 </html>
